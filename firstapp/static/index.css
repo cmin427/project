@@ -1,0 +1,196 @@
+
+.total {
+    display: flex;
+    flex-direction: row;
+    height: 730px;
+    background-color: rgb(250, 250, 250);
+}
+.total2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 730px;
+    background-color: rgb(250, 250, 250);
+}
+.bt_box {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: 'Gamja Flower', cursive;
+}
+
+.bt {
+    border-radius: 5px;
+    margin-top:30px;
+    height:40px;
+    width: 150px;
+    font-family: 'Gamja Flower', cursive;
+    font-size: 20px;
+
+}
+
+.bt_box button {
+    border: 1px solid rgb(225, 237, 255);
+    border-radius: 5px;
+    height: 40px;
+    box-shadow:
+    0 30px 60px 12px rgba(0, 0, 33, 0.05),
+    0 4px 24px 0 rgba(0, 0, 33, 0.05),
+    0 0 1px 0 rgba(0, 0, 33, 0.09) ;
+
+    background-color:rgb(76, 126, 172);
+    color: rgb(0, 0, 0);
+    padding: 5px;
+
+    font-size: 20px;
+    color : white;
+    font-family: 'Gamja Flower', cursive;
+}
+
+.bt_box button:hover {
+    color:rgb(215, 194, 255);
+    background-color: rgb(0, 0, 0);
+    font-family: 'Gamja Flower', cursive;
+}
+
+.side_box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    width: 50%;
+    height: 100%;
+    color: rgb(67, 68, 82);
+}
+
+.txt_box {
+    display:flex;
+    justify-content: left;
+    flex-direction: column;
+    height: 300px;
+
+    line-height: 0px;
+}
+.txt_box > p {
+    font-family: 'Gamja Flower', cursive;
+}
+
+.txt_box {
+    font-family: 'Architects Daughter', cursive;
+}
+
+.title {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 300px;
+    height: 60px;
+    margin:0px;
+    font-family: 'Gamja Flower', cursive;
+}
+
+.log_pic {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    height: 700px;
+}
+
+.pic {
+    display:flex;
+    width: 200px;
+    height: 130px;
+    background-image: url('./hippo4.png');
+    background-size: 200px 130px;
+    margin: 0px;
+
+}
+
+.login_box {
+    width: 600px;
+    height: 70%;
+    border-radius: 15px;
+    border: 1px solid rgb(250, 250, 250);
+    box-shadow:
+                0 30px 60px 12px rgba(0, 0, 33, 0.05),
+                0 4px 24px 0 rgba(0, 0, 33, 0.05),
+                0 0 1px 0 rgba(0, 0, 33, 0.09) ;
+    
+                display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+    justify-content: space-around;
+    align-items: center;
+
+    font-family: 'Architects Daughter', cursive;
+    color: rgb(67, 68, 82);
+}
+
+.box_container {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    height: 80%;
+    margin-bottom: 10px;
+    border-radius: 15px;
+    font-family: 'Architects Daughter', cursive;
+}
+
+.id {
+    height: 50px;
+    border: 1px solid rgb(221, 221, 221);
+    font-family: 'Architects Daughter', cursive;
+}
+
+.box{
+    display: flex;
+    flex-direction: column;
+    color: gray;
+    font-family: 'Architects Daughter', cursive;
+}
+
+.bt_box {
+    margin-top: 80px;
+    font-family: 'Architects Daughter', cursive;
+    display : flex;
+    flex-direction: column;
+}
+
+.bt1 {
+    border-radius: 5px;
+    margin-left:-4px;
+    height:40px;
+    font-family: 'Architects Daughter', cursive;
+}
+
+.bt2 {
+    border-radius: 5px;
+    margin-left:-3px;
+    height:40px;
+    font-family: 'Architects Daughter', cursive;
+}
+
+.bt_box button {
+    border: 1px solid rgb(225, 237, 255);
+    border-radius: 5px;
+    height: 40px;
+    box-shadow:
+    0 30px 60px 12px rgba(0, 0, 33, 0.05),
+    0 4px 24px 0 rgba(0, 0, 33, 0.05),
+    0 0 1px 0 rgba(0, 0, 33, 0.09) ;
+
+    background-color:rgb(76, 126, 172);
+    color: rgb(0, 0, 0);
+    padding: 5px;
+
+    font-size: 20px;
+    color : white;
+    font-family: 'Architects Daughter', cursive;
+}
+
+.bt_box button:hover {
+    color:rgb(215, 194, 255);
+    background-color: rgb(0, 0, 0);
+}

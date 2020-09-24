@@ -1,0 +1,29 @@
+* {
+    font-family: 'Gamja Flower', cursive;
+}
+
+.total {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 730px;
+    background-color: rgb(250, 250, 250);
+}
+.title {
+    margin-top: 50px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+}
+.box_cont {
+    display:flex;
+    flex-direction: column;
+}
+
+.box {
+    display:flex;
+    font-size:30px;
+}

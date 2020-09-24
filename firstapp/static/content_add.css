@@ -1,0 +1,50 @@
+.total {
+    display: flex;
+    flex-direction: column;
+}
+.box_info {
+    display: flex;
+    flex-direction: column;
+}
+
+.bt_box {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: 'Gamja Flower', cursive;
+}
+
+.bt {
+    border-radius: 5px;
+    margin-top:30px;
+    height:40px;
+    width: 150px;
+    font-family: 'Gamja Flower', cursive;
+    font-size: 20px;
+
+}
+
+.bt_box button {
+    border: 1px solid rgb(225, 237, 255);
+    border-radius: 5px;
+    height: 40px;
+    box-shadow:
+    0 30px 60px 12px rgba(0, 0, 33, 0.05),
+    0 4px 24px 0 rgba(0, 0, 33, 0.05),
+    0 0 1px 0 rgba(0, 0, 33, 0.09) ;
+
+    background-color:rgb(76, 126, 172);
+    color: rgb(0, 0, 0);
+    padding: 5px;
+
+    font-size: 20px;
+    color : white;
+    font-family: 'Gamja Flower', cursive;
+}
+
+.bt_box button:hover {
+    color:rgb(215, 194, 255);
+    background-color: rgb(0, 0, 0);
+    font-family: 'Gamja Flower', cursive;
+}
