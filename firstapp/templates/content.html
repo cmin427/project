@@ -7,12 +7,17 @@
 </head>
 <body>
     content
-    {{photo.photo_num}}
-    주소:
-    
-    상품:
-
-    #상품리스트 특정상품 누르면 detail로
-
+    <a href="{% url 'content_add' %}">판매등록 ></a>
+</br>
+</br>
+이름            지역            가격
+</br>
+{% for pro in product %}
+{{pro.name}}   {{pro.region}}  {{pro.price}} 
+</br>
+{% endfor %}
+</br>
+</br>
+</br>
 </body>
 </html>

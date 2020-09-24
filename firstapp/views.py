@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.contrib.auth.models import User
 from django.contrib import auth
 from django.shortcuts import redirect
-from .models import newclass
+from .models import newclass,photo,product_info
 import os
 import sys
 import requests
@@ -131,12 +131,28 @@ def join(request):
     return render(request,'join.html')
 
 def content(request):
-    user_id = request.POST["user_id"]
-    photo = photo.objects.filter(username=user_id)
+    product = product_info.objects.all()
+    context ={'product':product}
+    return render(request,'content.html',context)
 
-    return render(request,'content.html')
+def content_add(request):
+    if request.method =="POST":
+        name = request.POST["product_name"]
+        price = request.POST["product_price"]
+        region = request.POST["product_region"]
+    
+        product_info.objects.create(
+            name=name,
+            price=price,
+            region=region
+        )
 
-def detail(request):
+        return redirect('content')
+
+    return render(request, 'content_add.html')
+    
+
+def detail(request,):
     return render(request,'detail.html')
 
 def chat(request):

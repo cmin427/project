@@ -22,8 +22,9 @@ urlpatterns = [
     path('',views.index, name='index'),
     path('join/',views.join, name='join'),
     path('content/',views.content, name='content'),
-    path('detail/',views.detail, name='detail'),
+    path('detail/<int:product_pk>',views.detail, name='detail'),
     path('chat/',views.chat, name='chat'),
     path('trade/',views.trade, name='trade'),
     path('logout/', views.logout, name='logout'),
+    path('content_add/', views.content_add, name='content_add'),
 ]
