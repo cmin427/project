@@ -3,6 +3,11 @@ from django.contrib.auth.models import User
 from django.contrib import auth
 from django.shortcuts import redirect
 from .models import newclass
+import os
+import sys
+import requests
+from face_recognition import facedetection
+
 #   Create your views here.
 #   Create your views here.
 ERROR_MSG = {
@@ -90,14 +95,10 @@ def join(request):
                         username=user_id,
                         password=user_pw
                     )
-
-                    # 추가
-                    # newclass.objects.create(
-                    #     participate_class=participate_class,
-                    #     user=created_user,
-                    #     name=name,
-                    #     phone_num=phone_num
-                    # )
+                    face_detected = photo.objects.create(
+                        user_id=user_id,
+                        photo_num=0
+                    )
 
                     auth.login(request, created_user)
 
@@ -130,6 +131,9 @@ def join(request):
     return render(request,'join.html')
 
 def content(request):
+    user_id = request.POST["user_id"]
+    photo = photo.objects.filter(username=user_id)
+
     return render(request,'content.html')
 
 def detail(request):
