@@ -12,6 +12,7 @@
     <a href="{% url 'logout' %}">로그아웃 하기 > </a>
     <br/>
     <h3>{{user.get_username}} 님, 안녕하세요</h3>
+    {{uploaded_file_url}}
     <form action="{% url 'content' %}" method="POST">
         {% csrf_token %}
     <input type="hidden" name="user_id" value="{{user.get_username}}">
@@ -22,7 +23,7 @@
   {% else %}
   {% if error.state %}
   <h2>{{error.msg}}</h2>
-{% endif %}
+    {% endif %}
     <form action="{% url 'index' %}" method="POST">
         {% csrf_token %}
         
@@ -33,7 +34,7 @@
     
     
     <a href="{% url 'join' %}" >Join > </button>
-        {% endif %}
+    {% endif %}
     
 </body>
 </html>

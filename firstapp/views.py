@@ -2,12 +2,21 @@ from django.shortcuts import render
 from django.contrib.auth.models import User
 from django.contrib import auth
 from django.shortcuts import redirect
-from .models import newclass,photo,product_info
+from .models import newclass,photo,product_info,Document,facedata
 import os
 import sys
 import requests
 from face_recognition import facedetection
+from django.core.files.storage import FileSystemStorage
 
+# from django.shortcuts import render, redirect
+# from django.conf import settings
+# import os
+# from main_web import afree
+# from firstapp.models import Document
+# from firstapp.forms import DocumentForm
+# from django.template.response import TemplateResponse
+# from django.template.base import TemplateSyntaxError
 #   Create your views here.
 #   Create your views here.
 ERROR_MSG = {
@@ -70,8 +79,13 @@ def join(request):
             'msg': ''
         }
     }
-    if request.method == "POST":
-
+    if request.method == "POST" and request.FILES['myfile']:
+        myfile = request.FILES['myfile']
+        fs = FileSystemStorage()
+        filename = fs.save(myfile.name, myfile)
+        uploaded_file_url = fs.url(filename)
+        uploaded_file_url = 'C:\\Users\\min\\Desktop\\project\\Afree_market\\' + uploaded_file_url[1:]
+        face_data = facedetection(uploaded_file_url)
         user_id = request.POST['user_id']
         user_pw = request.POST['user_pw']
         user_pw_check = request.POST['user_pw_check']
@@ -95,9 +109,9 @@ def join(request):
                         username=user_id,
                         password=user_pw
                     )
-                    face_detected = photo.objects.create(
+                    face_data = facedata.objects.create(
                         user_id=user_id,
-                        photo_num=0
+                        f_data=face_data
                     )
 
                     auth.login(request, created_user)

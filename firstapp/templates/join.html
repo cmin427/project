@@ -10,7 +10,8 @@
     {% if error.state %}
     <h2>{{error.msg}}</h2>
   {% endif %}
-    <form action="{% url 'join' %}" method="POST">
+  <form method="POST" enctype="multipart/form-data">
+    <!-- <form action="{% url 'join' %}" method="POST"> -->
         {% csrf_token %}
     <p>이름</p>
     <input name="username" placeholder="이름을 입력 하세요" type='text' />
@@ -21,7 +22,10 @@
     <input name="user_pw_check" placeholder="PW를 다시 입력 하세요" type='password' />
     <p>전화번호</p>    
     <input name="user_HP" placeholder="전화번호를 입력 하세요" type='text' />
+    <p>얼굴인식</p>        
+    <input type="file" name="myfile">
     <!-- <input name="userface" placeholder="얼굴데이터" type='text' />
+        
     <input name="useremail" placeholder="email을 입력 하세요" type='text' />
     <input name="usernick" placeholder="닉네임을 입력 하세요" type='text' /> -->
     <br/>

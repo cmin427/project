@@ -22,12 +22,16 @@ class photo(models.Model):
     photo_num = models.IntegerField(default=0)
     user_id = models.CharField(max_length=255)
 
-
 class product_info(models.Model):
     name = models.CharField(max_length=35)
     price = models.IntegerField()
     region = models.CharField(max_length=35)
 
+class Document(models.Model):
+    description = models.CharField(max_length=255, blank=True)
+    document = models.FileField(upload_to='documents/')
+    uploaded_at = models.DateTimeField(auto_now_add=True)   
 
-
-    
+class facedata(models.Model):
+    f_data = models.CharField(max_length=255)
+    user_id = models.CharField(max_length=255)
