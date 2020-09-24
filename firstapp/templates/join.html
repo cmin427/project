@@ -7,17 +7,26 @@
 </head>
 <body>
     join
-    <form action="{% url 'home' %}" method="POST">
+    {% if error.state %}
+    <h2>{{error.msg}}</h2>
+  {% endif %}
+    <form action="{% url 'join' %}" method="POST">
         {% csrf_token %}
+    <p>이름</p>
     <input name="username" placeholder="이름을 입력 하세요" type='text' />
-    <button name="duplicated_id" type="submit">check</button>
-    <input name="userid" placeholder="ID를 입력 하세요" type='text' />
-    <input name="userpw" placeholder="PW를 입력 하세요" type='text' />
-    <input name="userpw_confirm" placeholder="PW를 다시 입력 하세요" type='text' />
-    <input name="userface" placeholder="얼굴데이터" type='text' />
+    <p>아이디</p>
+    <input name="user_id" placeholder="ID를 입력 하세요" type='text' />
+    <button name="duplicated_id" type="submit">중복확인</button>
+    <p>비밀번호</p>
+    <input name="user_pw" placeholder="PW를 입력 하세요" type='password' />
+    <input name="user_pw_check" placeholder="PW를 다시 입력 하세요" type='password' />
+    <p>전화번호</p>    
+    <input name="user_HP" placeholder="전화번호를 입력 하세요" type='text' />
+    <!-- <input name="userface" placeholder="얼굴데이터" type='text' />
     <input name="useremail" placeholder="email을 입력 하세요" type='text' />
-    <input name="userHP" placeholder="전화번호를 입력 하세요" type='text' />
-    <input name="usernick" placeholder="닉네임을 입력 하세요" type='text' />
+    <input name="usernick" placeholder="닉네임을 입력 하세요" type='text' /> -->
+    <br/>
+    <br/>
     <button type="submit">Join</button>
     </form>
 </body>

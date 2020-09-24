@@ -19,10 +19,11 @@ from firstapp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',views.home, name='home'),
+    path('',views.index, name='index'),
     path('join/',views.join, name='join'),
     path('content/',views.content, name='content'),
     path('detail/',views.detail, name='detail'),
     path('chat/',views.chat, name='chat'),
     path('trade/',views.trade, name='trade'),
+    path('logout/', views.logout, name='logout'),
 ]

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>main</title>
+</head>
+<body>
+    <!-- <img src="./cat.png" alt="귀여운고양이사진" /> -->
+    {% if user.is_authenticated %}
+    <a href="{% url 'logout' %}">로그아웃 하기 > </a>
+    <br/>
+    <h3>{{user.get_username}} 님, 안녕하세요</h3>
+    <br/>
+    
+  {% else %}
+    <form action="{% url 'index' %}" method="POST">
+        {% csrf_token %}
+        <input name="user_id" placeholder="ID를 입력 하세요" type='text' />
+        <input name="user_pw" placeholder="PW를 입력 하세요" type='password' />
+        <input type="submit" value="Log In"/>
+    </form>
+    
+    
+    <a href="{% url 'join' %}" >Join > </button>
+        {% endif %}
+    
+</body>
+</html>
