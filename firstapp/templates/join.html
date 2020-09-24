@@ -7,6 +7,8 @@
 </head>
 <body>
     join
+    <form action="{% url 'home' %}" method="POST">
+        {% csrf_token %}
     <input name="username" placeholder="이름을 입력 하세요" type='text' />
     <button name="duplicated_id" type="submit">check</button>
     <input name="userid" placeholder="ID를 입력 하세요" type='text' />
@@ -17,5 +19,6 @@
     <input name="userHP" placeholder="전화번호를 입력 하세요" type='text' />
     <input name="usernick" placeholder="닉네임을 입력 하세요" type='text' />
     <button type="submit">Join</button>
+    </form>
 </body>
 </html>

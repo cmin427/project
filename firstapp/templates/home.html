@@ -6,10 +6,18 @@
     <title>main</title>
 </head>
 <body>
-    <img src="./cat.png" alt="귀여운고양이사진" />
+    <!-- <img src="./cat.png" alt="귀여운고양이사진" /> -->
+    
+    <form action="{% url 'home' %}" method="POST">
+        {% csrf_token %}
     <input name="userid" placeholder="ID를 입력 하세요" type='text' />
     <input name="userpw" placeholder="PW를 입력 하세요" type='password' />
-    <button type="submit">log in</button>
-    <button type="submit">Join</button>
+    <input type="submit" value="Log In"/>
+    </form>
+
+    <form action="{% url 'join' %}" method="POST">
+        {% csrf_token %}
+        <input type="submit" value="JOIN"/>
+    </form>
 </body>
 </html>
